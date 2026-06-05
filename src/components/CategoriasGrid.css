@@ -1,0 +1,140 @@
+.categorias-header {
+  text-align: center;
+  margin: 40px 0 20px;
+  padding: 0 20px;
+}
+
+.categorias-title {
+  font-size: 2.5rem;
+  color: #2D2B26;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.categorias-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #C77D4A, #5F7A6B);
+  border-radius: 3px;
+}
+
+.categorias-subtitle {
+  font-size: 1rem;
+  color: #6B6356;
+  margin-top: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px 80px;
+}
+
+.cat-card {
+  aspect-ratio: 1/1;
+  border-radius: 35px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cat-card:hover::before {
+  opacity: 1;
+}
+
+.cat-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+}
+
+.card-icon {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 15px;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+
+.cat-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: 1px;
+}
+
+.card-desc {
+  font-size: 0.7rem;
+  color: white;
+  margin-top: 10px;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .categorias-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+}

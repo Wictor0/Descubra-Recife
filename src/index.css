@@ -1,0 +1,58 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@400;600;800&display=swap');
+
+/* Reset e Definições Globais */
+:root {
+  --bg-vivo: #FFB800; /* Amarelo bem vivo para a borda ao redor */
+  --bg-content: #FDF8E1; /* Creme/Off-White para o conteúdo do site */
+  --laranja-recife: #FF4D00;
+  --texto-escuro: #1A1A1A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-vivo); /* FUNDO AMARELO VIVO */
+  color: var(--texto-escuro);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  padding: 10px; /* Margem para a bordinha amarela aparecer */
+}
+
+/* Tipografia Estilizada */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  color: var(--texto-escuro);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Container do site, deve ocupar a largura total */
+.site-wrapper {
+  width: 100%;
+}
+
+/* A "Pílula" de Conteúdo com Bordas Arredondadas */
+.content-pill {
+  background-color: var(--bg-content); /* Fundo creme */
+  border-radius: 60px; /* Bordas bem arredondadas */
+  min-height: calc(100vh - 20px); /* Ocupa a altura total menos a borda amarela */
+  position: relative; /* FUNDAMENTAL para os adesivos e a Navbar flutuante */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave */
+  overflow: hidden; /* Garante que nada saia da pílula */
+  display: flex;
+  flex-direction: column;
+}

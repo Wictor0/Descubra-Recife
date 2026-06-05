@@ -1,0 +1,87 @@
+/* Hero.css */
+
+.hero-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px; 
+  position: relative; 
+  z-index: 1; 
+}
+
+.hero-oval {
+  width: 95%;
+  max-width: 1300px;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza a imagem do texto se ela for menor */
+}
+
+.art-banner-wrapper {
+  width: 100%;
+  border-radius: 60px; /* Mantém as bordas arredondadas */
+  overflow: hidden; /* Garante que a imagem não vaze nas bordas arredondadas */
+  display: flex;
+  justify-content: center;
+}
+
+.art-banner-img {
+  width: 100%; /* Cobre a largura total da forma oval */
+  height: auto; /* Mantém a proporção */
+  display: block;
+}
+
+.stickers-overlay {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0; /* Cola na base da arte colorida */
+  z-index: 10; 
+  transform: translateY(35%); 
+}
+
+.sticker-composite {
+  width: 100%; 
+  height: auto; 
+  display: block;
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+}
+
+.art-and-stickers-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.art-banner-wrapper {
+  width: 100%;
+  border-radius: 60px; /* Mantém as bordas arredondadas da arte */
+  overflow: hidden; 
+  display: flex;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra na arte */
+}
+
+.art-banner-img {
+  width: 100%; 
+  height: auto; 
+  display: block;
+}
+
+.text-banner-wrapper {
+  width: 95%; /* Um pouquinho menor que a arte para dar o efeito do protótipo */
+  max-width: 1100px; /* Limite do tamanho do texto */
+  margin-top: 10px; /* Espacinho entre a arte colorida e o card laranja */
+  display: flex;
+  justify-content: center;
+  z-index: 1; /* Fica atrás dos adesivos */
+}
+
+.text-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Se a sua imagem do texto não tiver bordas arredondadas ou sombra na imagem em si, descomente abaixo: */
+  /* border-radius: 40px; */
+  /* box-shadow: 0 10px 20px rgba(0,0,0,0.1); */
+}

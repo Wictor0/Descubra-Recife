@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap');
+
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.navbar-wrapper.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+.navbar-organic {
+  background: white;
+  width: 95%;
+  max-width: 1200px;
+  border-radius: 80px 80px 70px 70px;
+  padding: 15px 40px 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Grupos de links - AGORA COM A MESMA LARGURA */
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1; /* Ambos os lados ocupam o mesmo espaço */
+}
+
+.links-left {
+  justify-content: flex-start;
+}
+
+.links-right {
+  justify-content: flex-end;
+}
+
+/* Ajuste para telas médias */
+@media (max-width: 1000px) {
+  .nav-group {
+    width: 280px;
+    gap: 15px;
+  }
+  
+  .nav-group a {
+    font-size: 1rem;
+  }
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 900px) {
+  .nav-group {
+    gap: 12px;
+  }
+  
+ .nav-group a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ajuste para telas pequenas */
+@media (max-width: 768px) {
+  .navbar-organic {
+    padding: 10px 15px;
+    border-radius: 40px;
+  }
+  
+  .nav-group {
+    width: auto;
+    gap: 8px;
+  }
+  
+  .nav-group a {
+    font-size: 0.7rem;
+  }
+  
+  .links-left {
+    flex: 1;
+  }
+  
+  .links-right {
+    flex: 1;
+  }
+}
+
+/* Logo centralizada */
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  max-height: 66px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo dos links */
+.nav-group a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  position: relative;
+  white-space: nowrap; /* Impede quebra de linha */
+}
+
+.nav-group a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-group a:hover::after {
+  width: 100%;
+}
+
+.nav-group a:hover {
+  transform: translateY(-2px);
+}
+
+/* Estilo da barra de pesquisa */
+.search-bar-canva {
+  display: flex;
+  align-items: center;
+  background: #FDF8E1;
+  border: 1px solid #E8CDA1;
+  padding: 3px 8px;
+  border-radius: 20px;
+  min-width: 40px;
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-bar-canva:hover {
+  background: #FFF;
+  border-color: #C77D4A;
+  transform: scale(1.05);
+}
+
+.search-icon {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* Container do SearchBar para manter alinhamento */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 600px) {
+  .nav-group a {
+    font-size: 0.7rem;
+  }
+  
+  .search-bar-canva {
+    padding: 4px 10px;
+    height: 28px;
+  }
+  
+  .search-icon {
+    font-size: 1rem;
+  }
+  
+  .logo-img {
+    max-height: 45px;
+  }
+}

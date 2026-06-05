@@ -1,0 +1,563 @@
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 160px 20px 80px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  color: #2D2B26;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.page-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #C77D4A, #5F7A6B);
+  border-radius: 3px;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  color: #6B6356;
+  margin-top: 20px;
+}
+
+/* Filtros */
+.filtros-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.filtro-btn {
+  padding: 10px 25px;
+  border: 2px solid #E8E0C5;
+  background: transparent;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4A4538;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filtro-btn:hover {
+  border-color: #C77D4A;
+  color: #C77D4A;
+}
+
+.filtro-btn.active {
+  background: #C77D4A;
+  border-color: #C77D4A;
+  color: white;
+}
+
+/* Grids de conteúdo */
+.destinos-grid,
+.pratos-grid,
+.culturas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* Cards */
+.destino-card,
+.prato-card,
+.cultura-card {
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.destino-card:hover,
+.prato-card:hover,
+.cultura-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
+
+.destino-imagem,
+.prato-imagem,
+.cultura-imagem {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.destino-imagem img,
+.prato-imagem img,
+.cultura-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.destino-card:hover .destino-imagem img,
+.prato-card:hover .prato-imagem img,
+.cultura-card:hover .cultura-imagem img {
+  transform: scale(1.05);
+}
+
+.destino-categoria {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #C77D4A;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.destino-info,
+.prato-info,
+.cultura-info {
+  padding: 20px;
+}
+
+.destino-info h3,
+.prato-info h3,
+.cultura-info h3 {
+  font-size: 1.4rem;
+  color: #2D2B26;
+  margin-bottom: 8px;
+}
+
+.destino-local {
+  color: #C77D4A;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.destino-descricao,
+.prato-descricao {
+  color: #6B6356;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.btn-saiba-mais {
+  background: transparent;
+  border: none;
+  color: #C77D4A;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+  color: #5F7A6B;
+  transform: translateX(5px);
+}
+
+.prato-onde {
+  background: #FEF9E6;
+  padding: 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  color: #4A4538;
+}
+
+.cultura-curiosidade {
+  background: linear-gradient(135deg, #FEF9E6, #FFF);
+  padding: 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  color: #5F7A6B;
+  margin-top: 12px;
+  border-left: 3px solid #5F7A6B;
+}
+
+/* Seção de restaurantes em destaque */
+.restaurantes-destaque {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid #E8E0C5;
+}
+
+.restaurantes-destaque h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2D2B26;
+  margin-bottom: 40px;
+}
+
+.restaurantes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.restaurante-card {
+  background: white;
+  padding: 25px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.restaurante-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.restaurante-card h3 {
+  color: #C77D4A;
+  margin-bottom: 10px;
+}
+
+/* Eventos */
+.eventos-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid #E8E0C5;
+}
+
+.eventos-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2D2B26;
+  margin-bottom: 40px;
+}
+
+.eventos-lista {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.evento-item {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.evento-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.evento-data {
+  background: #C77D4A;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-align: center;
+  min-width: 70px;
+}
+
+.evento-info h4 {
+  color: #2D2B26;
+  margin-bottom: 5px;
+}
+
+.evento-info p {
+  color: #6B6356;
+  font-size: 0.8rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 100px 15px 60px;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  .destinos-grid,
+  .pratos-grid,
+  .culturas-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .evento-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .evento-data {
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 80px 12px 40px;
+  }
+  
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .filtro-btn {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .destino-info h3,
+  .prato-info h3,
+  .cultura-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+.experiencias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.experiencia-card {
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.experiencia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
+
+.experiencia-card h3 {
+  color: #C77D4A;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.experiencia-card p {
+  color: #6B6356;
+  line-height: 1.6;
+}
+
+/* Página FAQ */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  padding: 25px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.faq-item h3 {
+  color: #C77D4A;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  color: #6B6356;
+  line-height: 1.6;
+}
+
+.experiencias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+
+/* Para telas maiores, garantir que cabem 3 ou 4 cards */
+@media (min-width: 1400px) {
+  .experiencias-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1100px) and (max-width: 1399px) {
+  .experiencias-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1099px) {
+  .experiencias-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .experiencias-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards responsivos */
+.experiencia-card {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.experiencia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+}
+
+.experiencia-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.experiencia-card h3 {
+  color: #C77D4A;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.experiencia-descricao {
+  color: #6B6356;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+  flex-grow: 1;
+}
+
+.experiencia-detalhes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 12px 0;
+  border-top: 1px solid #E8E0C5;
+  border-bottom: 1px solid #E8E0C5;
+}
+
+.detalhe {
+  font-size: 0.75rem;
+  color: #5A5242;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.detalhe.preco {
+  background: #2D5A4A;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.btn-reservar {
+  background: transparent;
+  border: 2px solid #C77D4A;
+  color: #C77D4A;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+.btn-reservar:hover {
+  background: #C77D4A;
+  color: white;
+}
+
+.arte-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.arte-card {
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  padding: 25px;
+}
+
+.arte-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
+
+.arte-info h3 {
+  color: #C77D4A;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.arte-info p {
+  color: #6B6356;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.arte-local {
+  display: inline-block;
+  background: #FEF9E6;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #5F7A6B;
+  margin-bottom: 15px;
+}
