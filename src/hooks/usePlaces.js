@@ -1,4 +1,3 @@
-// src/hooks/usePlaces.js
 import { useState, useEffect } from 'react';
 
 export function usePlaces(category = null) {
@@ -8,8 +7,8 @@ export function usePlaces(category = null) {
 
   useEffect(() => {
     const url = category
-      ? `http://localhost:3001/api/places?category=${category}`
-      : 'http://localhost:3001/api/places';
+      ? `https://descubra-recife.onrender.com/api/places?category=${category}`
+      : 'https://descubra-recife.onrender.com/api/places';
 
     fetch(url)
       .then(res => res.json())
