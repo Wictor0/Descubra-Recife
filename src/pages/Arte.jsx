@@ -1,10 +1,12 @@
 // src/pages/Arte.jsx
 import React from 'react';
+import { useRoteiro } from '../context/RoteiroContext';
 import './Pages.css';
 import { usePlaces } from '../hooks/usePlaces';
 
 const Arte = () => {
   const { places, loading, error } = usePlaces('arte');
+  const { adicionar } = useRoteiro();
 
   if (loading) return <div className="page-container"><p>Carregando arte...</p></div>;
   if (error) return <div className="page-container"><p>Erro ao carregar dados.</p></div>;
@@ -24,7 +26,9 @@ const Arte = () => {
               {arte.local_especifico && (
                 <span className="arte-local">📍 {arte.local_especifico}</span>
               )}
-              <button className="btn-saiba-mais">Saiba mais →</button>
+              <button className="btn-adicionar-roteiro" onClick={() => adicionar(arte)}>
+                + Adicionar ao roteiro
+              </button>
             </div>
           </div>
         ))}

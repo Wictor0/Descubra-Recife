@@ -561,3 +561,21 @@
   color: #5F7A6B;
   margin-bottom: 15px;
 }
+
+.btn-adicionar-roteiro {
+  background: transparent;
+  border: 2px solid #C77D4A;
+  color: #C77D4A;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+.btn-adicionar-roteiro:hover {
+  background: #C77D4A;
+  color: white;
+}

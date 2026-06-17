@@ -1,10 +1,12 @@
 // src/pages/Experiencias.jsx
 import React from 'react';
+import { useRoteiro } from '../context/RoteiroContext';
 import './Pages.css';
 import { usePlaces } from '../hooks/usePlaces';
 
 const Experiencias = () => {
   const { places, loading, error } = usePlaces('experiencias');
+  const { adicionar } = useRoteiro();
 
   if (loading) return <div className="page-container"><p>Carregando experiências...</p></div>;
   if (error) return <div className="page-container"><p>Erro ao carregar dados.</p></div>;
@@ -26,7 +28,9 @@ const Experiencias = () => {
               <span className="detalhe"><strong>📍</strong> {exp.local_especifico}</span>
               <span className="detalhe preco">{exp.preco}</span>
             </div>
-            <button className="btn-reservar">Reservar Experiência →</button>
+            <button className="btn-adicionar-roteiro" onClick={() => adicionar(exp)}>
+              + Adicionar ao roteiro
+            </button>
           </div>
         ))}
       </div>

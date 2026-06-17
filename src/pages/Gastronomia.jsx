@@ -1,5 +1,6 @@
 // src/pages/Gastronomia.jsx
 import React from 'react';
+import { useRoteiro } from '../context/RoteiroContext';
 import './Pages.css';
 import { usePlaces } from '../hooks/usePlaces';
 import boloRolo from '../assets/bolo_rolo.jpg';
@@ -16,6 +17,7 @@ const imagensLocais = {
 
 const Gastronomia = () => {
   const { places, loading, error } = usePlaces('gastronomia');
+  const { adicionar } = useRoteiro();
 
   if (loading) return <div className="page-container"><p>Carregando gastronomia...</p></div>;
   if (error) return <div className="page-container"><p>Erro ao carregar dados.</p></div>;
@@ -40,6 +42,9 @@ const Gastronomia = () => {
                   <strong>Onde comer:</strong> {prato.onde_comer}
                 </div>
               )}
+              <button className="btn-adicionar-roteiro" onClick={() => adicionar(prato)}>
+                + Adicionar ao roteiro
+              </button>
             </div>
           </div>
         ))}

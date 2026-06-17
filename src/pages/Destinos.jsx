@@ -1,5 +1,6 @@
 // src/pages/Destinos.jsx
 import React, { useState } from 'react';
+import { useRoteiro } from '../context/RoteiroContext';
 import './Pages.css';
 import { usePlaces } from '../hooks/usePlaces';
 import marcoZero from '../assets/marco_zero.jpg';
@@ -22,6 +23,7 @@ const Destinos = () => {
   const [filtro, setFiltro] = useState('Todos');
   const { places, loading, error } = usePlaces('destinos');
   const categorias = ['Todos', 'Histórico', 'Cultural', 'Praia', 'Arte'];
+  const { adicionar } = useRoteiro();
 
   if (loading) return <div className="page-container"><p>Carregando destinos...</p></div>;
   if (error) return <div className="page-container"><p>Erro ao carregar dados.</p></div>;
@@ -55,7 +57,9 @@ const Destinos = () => {
             <div className="destino-info">
               <h3>{destino.title}</h3>
               <p className="destino-descricao">{destino.description}</p>
-              <button className="btn-saiba-mais">Saiba mais →</button>
+              <button className="btn-adicionar-roteiro" onClick={() => adicionar(destino)}>
+                + Adicionar ao roteiro
+              </button>
             </div>
           </div>
         ))}

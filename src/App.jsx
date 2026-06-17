@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import { RoteiroProvider } from './context/RoteiroContext';
+import Roteiro from './components/Roteiro';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -10,6 +12,7 @@ import Experiencias from "./pages/Experiencias";
 import Arte from "./pages/Arte";
 import FAQ from "./pages/Faq";
 import './index.css';
+
 
 function App() {
   useEffect(() => {
@@ -58,11 +61,10 @@ function App() {
   }, []);
 
   return (
+  <RoteiroProvider>
     <HashRouter>
-
       <div className="site-wrapper">
         <Navbar />
-        
         <div className="content-pill">
           <main>
             <Routes>
@@ -78,8 +80,10 @@ function App() {
           <Footer />
         </div>
       </div>
+      <Roteiro />
     </HashRouter>
-  );
+  </RoteiroProvider>
+);
 }
 
 export default App;

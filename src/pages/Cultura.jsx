@@ -1,5 +1,6 @@
 // src/pages/Cultura.jsx
 import React from 'react';
+import { useRoteiro } from '../context/RoteiroContext';
 import './Pages.css';
 import { usePlaces } from '../hooks/usePlaces';
 import frevo from '../assets/frevo.jpg';
@@ -16,6 +17,7 @@ const imagensLocais = {
 
 const Cultura = () => {
   const { places, loading, error } = usePlaces('cultura');
+  const { adicionar } = useRoteiro();
 
   if (loading) return <div className="page-container"><p>Carregando cultura...</p></div>;
   if (error) return <div className="page-container"><p>Erro ao carregar dados.</p></div>;
@@ -40,6 +42,9 @@ const Cultura = () => {
                   💡 {cultura.curiosidade}
                 </div>
               )}
+              <button className="btn-adicionar-roteiro" onClick={() => adicionar(cultura)}>
+                + Adicionar ao roteiro
+              </button>
             </div>
           </div>
         ))}
